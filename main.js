@@ -84,32 +84,44 @@ class CD extends Media {
 }
 
 const aceOfSpades = new CD('Motorhead', 'Ace Of Spades', 12);
-console.log('Band: ' + aceOfSpades._band);
+console.log()
+console.log('Band: ' + aceOfSpades.band);
 console.log('Album title: ' + aceOfSpades.title);
-console.log('Number of tracks: ' + aceOfSpades._tracks);
+console.log('Number of tracks: ' + aceOfSpades.tracks);
 aceOfSpades.toggleCheckOutStatus();
 console.log('Is checked out: ' + aceOfSpades.isCheckedOut);
 aceOfSpades.addRating(9);
 aceOfSpades.addRating(8);
 aceOfSpades.addRating(10);
 console.log('Average rating: ' + aceOfSpades.getAverageRating());
-console.log('----------');
 console.log();
+console.log('----------');
+
 
 const foundation = new Book('Isaac Asimov', 'The Foundation', 255);
+console.log()
+console.log('Author: ' + foundation.author);
+console.log('Book title: ' + foundation.title);
+console.log('Number of pages: ' + foundation.pages);
 foundation.toggleCheckOutStatus();
-console.log(foundation.isCheckedOut);
+console.log('Is checked out: ' + foundation.isCheckedOut);
+foundation.addRating(9);
+foundation.addRating(8);
 foundation.addRating(10);
-foundation.addRating(10);
-foundation.addRating(7);
-console.log(foundation.getAverageRating());
+console.log('Average rating: ' + foundation.getAverageRating());
+console.log();
 console.log('----------');
 
 const taxiDriver = new Movie('Martin Scorsese', 'Taxi Driver', 114);
+console.log()
+console.log('Director: ' + taxiDriver.director);
+console.log('Movie title: ' + taxiDriver.title);
+console.log('Run time: ' + taxiDriver.runTime);
 taxiDriver.toggleCheckOutStatus();
-console.log(taxiDriver.isCheckedOut);
-taxiDriver.addRating(7);
+console.log('Is checked out: ' + taxiDriver.isCheckedOut);
 taxiDriver.addRating(9);
-taxiDriver.addRating(7);
-console.log(taxiDriver.getAverageRating());
+taxiDriver.addRating(8);
+taxiDriver.addRating(10);
+console.log('Average rating: ' + taxiDriver.getAverageRating());
+console.log();
 console.log('----------');
