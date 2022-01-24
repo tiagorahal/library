@@ -1,63 +1,61 @@
 class Media {
-	constructor(title) {
-		this._title = title;
-		this._isCheckedOut = false;
-		this._ratings = 0;
-	}
+  constructor(title) {
+    this._title = title;
+    this._isCheckedOut = false;
+    this._ratings = [];
+  }
 
-	get title() {
-		return this._title;
-	}
+  get title() {
+    return this._title;
+  }
 
-	get isCheckedOut() {
-		return this._isCheckedOut;
-	}
+  get isCheckedOut() {
+    return this._isCheckedOut;
+  }
 
-	get ratings() {
-		return this._ratings;
-	}
+  get ratings() {
+    return this._ratings;
+  }
 
-	set checkout(condition) {
-		this._isCheckedOut = condition;
-	}
+  set isCheckedOut(value) {
+    this._isCheckedOut = value;
+  }
 
-	toggleCheckOutStatus() {
-		this._isCheckedOut = !this._isCheckedOut;
-	}
+  toggleCheckOutStatus() {
+    this.isCheckedOut = !this.isCheckedOut;
+  }
 
-	getAverageRating() {
-		let ratingsSum = this._ratings.reduce((accumulator, rating) => accumulator + rating);
-		return ratingsSum / this._ratings.length;
-	}
+  getAverageRating() {
+    let ratingsSum = this.ratings.reduce((accumulator, rating) => accumulator + rating);
+    return ratingsSum / this.ratings.length;
+  }
 
-	addRating(rating) {
-		this._ratings.push(rating);
-	}
+  addRating(value) {
+    this.ratings.push(value);
+  }
 }
 
-
 class Book extends Media {
-	constructor(author, title, pages) {
-		super(title);
-		this._author = author;
-		this.pages = pages;
-	}
+  constructor(author, title, pages) {
+    super(title);
+    this._author = author;
+    this._pages = pages;
+  }
 
-	get author() {
+  get author() {
     return this._author;
   }
 
   get pages() {
     return this._pages;
   }
-
 }
 
 class Movie extends Media {
   constructor(director, title, runTime) {
-    super(title)
+    super(title);
     this._director = director;
-    this._runTime = runTime
+    this._runTime = runTime;
   }
 
   get director() {
@@ -68,3 +66,7 @@ class Movie extends Media {
     return this._runTime;
   }
 }
+
+const historyOfEverything = new Book('Author here', 'Title here', 500);
+historyOfEverything.toggleCheckOutStatus();
+console.log(historyOfEverything.isCheckedOut);
