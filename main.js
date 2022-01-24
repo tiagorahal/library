@@ -42,4 +42,13 @@ class Book extends Media {
 		this._author = author;
 		this.pages = pages;
 	}
+
+	get author() {
+    return this._author;
+  }
+
+  get pages() {
+    return this._pages;
+  }
+	
 }
