@@ -78,3 +78,7 @@ console.log(historyOfEverything.getAverageRating());
 const speed = new Movie('Director here', 'title here', 116);
 speed.toggleCheckOutStatus();
 console.log(speed.isCheckedOut);
+speed.addRating(4);
+speed.addRating(7);
+speed.addRating(6);
+console.log(speed.getAverageRating());
