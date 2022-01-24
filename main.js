@@ -68,14 +68,14 @@ class Movie extends Media {
 }
 
 class CD extends Media {
-  constructor(singer, title, tracks) {
+  constructor(band, title, tracks) {
     super(title);
-    this._singer = singer;
+    this._band = band;
     this._tracks = tracks;
   }
 
-  get singer() {
-    return this._singer;
+  get band() {
+    return this._band;
   }
 
   get tracks() {
@@ -84,13 +84,17 @@ class CD extends Media {
 }
 
 const aceOfSpades = new CD('Motorhead', 'Ace Of Spades', 12);
+console.log('Band: ' + aceOfSpades._band);
+console.log('Album title: ' + aceOfSpades.title);
+console.log('Number of tracks: ' + aceOfSpades._tracks);
 aceOfSpades.toggleCheckOutStatus();
-console.log(aceOfSpades.isCheckedOut);
+console.log('Is checked out: ' + aceOfSpades.isCheckedOut);
 aceOfSpades.addRating(9);
 aceOfSpades.addRating(8);
 aceOfSpades.addRating(10);
-console.log(aceOfSpades.getAverageRating());
+console.log('Average rating: ' + aceOfSpades.getAverageRating());
 console.log('----------');
+console.log();
 
 const foundation = new Book('Isaac Asimov', 'The Foundation', 255);
 foundation.toggleCheckOutStatus();
