@@ -1,8 +1,8 @@
 class Media {
 	constructor(title) {
 		this._title = title;
-		this._isCheckedOut = false
-		this._ratings = 0
+		this._isCheckedOut = false;
+		this._ratings = 0;
 	}
 
 	get title() {
@@ -38,7 +38,7 @@ class Media {
 
 class Book extends Media {
 	constructor(author, title, pages) {
-		super(title)
+		super(title);
 		this._author = author;
 		this.pages = pages;
 	}
@@ -50,5 +50,5 @@ class Book extends Media {
   get pages() {
     return this._pages;
   }
-	
+
 }
