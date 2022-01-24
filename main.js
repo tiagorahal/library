@@ -67,6 +67,22 @@ class Movie extends Media {
   }
 }
 
+class CD extends Media {
+  constructor(singer, title, tracks) {
+    super(title);
+    this._singer = singer;
+    this._tracks = tracks;
+  }
+
+  get singer() {
+    return this._singer;
+  }
+
+  get tracks() {
+    return this._tracks;
+  }
+}
+
 const historyOfEverything = new Book('Author here', 'Title here', 500);
 historyOfEverything.toggleCheckOutStatus();
 console.log(historyOfEverything.isCheckedOut);
